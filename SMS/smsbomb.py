@@ -4,6 +4,7 @@
 
 
 import smtplib
+import getpass
 
 #start the smtp library with two inputs the designated client, and port
 mailserver = smtplib.SMTP('smtp.gmail.com',587)
@@ -13,7 +14,7 @@ mailserver.ehlo()
 
 #asks the user to input the information
 username = raw_input("Email Address: ")
-password = raw_input("Email Password: ")
+password = getpass.getpass()
 number = raw_input("Phone Number: ")
 carrier = raw_input("Phone Carrier: ")
 texttosend = raw_input("Text to send: ")
